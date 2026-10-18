@@ -1,10 +1,4 @@
-import React, {lazy} from "react";
-
-import preval from 'preval.macro'
-
-const Modal = lazy(() => import("../Modal/Modal"))
-
-const buildDate = preval`module.exports = new Date()`
+import Modal from "../Modal/Modal"
 
 export default function HelpMenu({visible, setVisible}) {
 
@@ -12,8 +6,8 @@ export default function HelpMenu({visible, setVisible}) {
       <Modal visible={visible} setVisible={setVisible} title={"About"}>
           <>
               <div><a href={"https://hales.app"}>&copy; Riley Hales</a></div>
-              <div>Updated: {new Date(buildDate).toLocaleString()}</div>
-              <div>Version: {process.env.REACT_APP_VERSION}</div>
+              <div>Updated: {new Date(__BUILD_DATE__).toLocaleString()}</div>
+              <div>Version: {__APP_VERSION__}</div>
               <hr/>
               <div className={"modal-body-divider"}>Quixx Trixx Power Ups</div>
               <ul style={{textAlign: "left"}}>

@@ -1,5 +1,3 @@
-import React from "react"
-
 const btnSizeCls = "btn-sizes"
 
 export default function ScoreColumn({groupJSON, groupID, click}) {
@@ -13,7 +11,7 @@ export default function ScoreColumn({groupJSON, groupID, click}) {
                         disabled={!groupJSON.canClick[index]}
                         onClick={() => click(groupID, num)}
                         aria-label={"scoring button"}>
-                    {num === "lock" ? <img className={"lock-icon"} src={process.env.PUBLIC_URL + "/icons/lock-fill.svg"} alt={"lock icon"}/> : num}
+                    {num === "lock" ? <img className={"lock-icon"} src={import.meta.env.BASE_URL + "icons/lock-fill.svg"} alt={"lock icon"}/> : num}
                 </button>
             </div>)
         })}

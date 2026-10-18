@@ -1,5 +1,4 @@
-import React from "react"
-import {createRoot} from 'react-dom/client'
+import {render} from "preact"
 
 import {BoardConfigProvider} from "./Contexts/BoardContext";
 import "./Colors.css"
@@ -7,11 +6,9 @@ import "./Colors.css"
 import Qwixx from "./Qwixx"
 
 
-createRoot(document.getElementById('root'))
-  .render(
-    <React.StrictMode>
-        <BoardConfigProvider>
-            <Qwixx/>
-        </BoardConfigProvider>
-    </React.StrictMode>
-  )
+render(
+    <BoardConfigProvider>
+        <Qwixx/>
+    </BoardConfigProvider>,
+    document.getElementById('root')
+)

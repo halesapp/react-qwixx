@@ -1,5 +1,3 @@
-import React from "react"
-
 import "./Modal.css"
 
 const classModalShow = "expand"
@@ -13,7 +11,7 @@ const classModalFooter = "modal-footer"
 const classButton = "modal-btn"
 const classDarkMode = "dark"
 
-export default function Modal({visible, setVisible, title, children, darkMode}) {
+export default function Modal({visible, setVisible, title = null, children = null, darkMode = false}) {
     const wrapperCSS = [classModalWrapper]
       .concat(visible ? classModalShow : classModalHide)
       .concat(darkMode ? classDarkMode : "")
@@ -40,10 +38,4 @@ export default function Modal({visible, setVisible, title, children, darkMode}) 
       </div>
     )
 
-}
-
-Modal.defaultProps = {
-    darkMode: false,
-    title: null,
-    children: null
 }

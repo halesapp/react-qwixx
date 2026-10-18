@@ -1,0 +1,17 @@
+{
+  "name": "qwixx-scorecards",
+  "compatibility_date": "2026-10-17",
+  "send_metrics": false,
+  "main": "worker.js",
+  "routes": [
+    { "pattern": "games.hales.app/qwixx*", "zone_name": "hales.app" },
+    { "pattern": "qwixx.games.hales.app", "custom_domain": true }
+  ],
+  "workers_dev": false,
+  "preview_urls": false,
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  }
+}

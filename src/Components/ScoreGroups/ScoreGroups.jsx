@@ -1,5 +1,3 @@
-import React from "react"
-
 import "./ScoreGroups.css"
 import ScoreColumn from "./ScoreColumn";
 import {useBoardConfigContext} from "../../Contexts/BoardContext";

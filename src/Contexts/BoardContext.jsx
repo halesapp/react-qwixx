@@ -1,9 +1,10 @@
-import React, {useContext, useEffect, useState} from "react"
+import {createContext} from "preact"
+import {useContext, useEffect, useState} from "preact/hooks"
 
 import useLocalStorage from "../Hooks/useLocalStorage";
 import Boards from "../Boards/Boards";
 
-const BoardConfig = React.createContext()
+const BoardConfig = createContext()
 
 export const useBoardConfigContext = () => {
     return useContext(BoardConfig)

@@ -1,9 +1,9 @@
-import React, {lazy, useState} from "react"
+import {useState} from "preact/hooks"
 
 import "./Controls.css"
 import {useBoardConfigContext} from "../../Contexts/BoardContext";
 
-const HelpMenu = lazy(() => import("../Modals/HelpMenu"))
+import HelpMenu from "../Modals/HelpMenu"
 
 export default function Controls() {
     const Board = useBoardConfigContext()
@@ -32,7 +32,7 @@ export default function Controls() {
                        onChange={() => Board.skip(index)}
                        aria-label={"Skip turn marker"}/>
                 <span className={`skip-style-span btn-sizes`}>
-                    {Board.state.trixx ? <img src={process.env.PUBLIC_URL + "icons/" + trixxIcons[index] + ".svg"} alt={"powerup icon"}></img> : "X"}
+                    {Board.state.trixx ? <img src={`${import.meta.env.BASE_URL}icons/${trixxIcons[index]}.svg`} alt={"powerup icon"}></img> : "X"}
                 </span>
             </label>
           )
@@ -60,19 +60,14 @@ export default function Controls() {
           <button className={navBtnCls} onClick={() => goFullscreen()}>
               {
                   fullScreen ?
-                  <img alt="Minimize Screen Button" src={process.env.PUBLIC_URL + "/icons/fullscreen-exit.svg"}/> :
-                  <img alt="Full Screen Button" src={process.env.PUBLIC_URL + "/icons/arrows-fullscreen.svg"}/>
+                  <img alt="Minimize Screen Button" src={import.meta.env.BASE_URL + "icons/fullscreen-exit.svg"}/> :
+                  <img alt="Full Screen Button" src={import.meta.env.BASE_URL + "icons/arrows-fullscreen.svg"}/>
               }
           </button>
           <button className={navBtnCls} onClick={() => setModalVisibleHelp(true)}>
-              <img alt="Toggle Instructions" src={process.env.PUBLIC_URL + "/icons/help.svg"}/>
+              <img alt="Toggle Instructions" src={import.meta.env.BASE_URL + "icons/help.svg"}/>
           </button>
           <HelpMenu visible={modalVisibleHelp} setVisible={setModalVisibleHelp} title={"Help"}/>
       </div>
 )
 };
-
-Controls.defaultProps = {
-    trixx: true
-}
-

@@ -1,9 +1,7 @@
 # Qwixx Score Card
-A React web app to help you play the dice game Qwixx.
+A Preact web app to help you play the dice game Qwixx.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7cd9a5e3-af1e-4140-a4e3-a2b48f6e180e/deploy-status)](https://app.netlify.com/sites/rileyhalescom-quixx/deploys)
-
-Play this app here: https://qwixx.games.hales.app
+Play this app here: https://games.hales.app/qwixx/
 
 Full rules for Qwixx: https://www.ultraboardgames.com/qwixx/game-rules.php
 

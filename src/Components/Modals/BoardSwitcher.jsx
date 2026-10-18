@@ -1,7 +1,6 @@
-import React, {lazy} from "react";
 import {useBoardConfigContext} from "../../Contexts/BoardContext";
 
-const Modal = lazy(() => import("../Modal/Modal"))
+import Modal from "../Modal/Modal"
 
 export default function BoardMenu({visible, setVisible}) {
     const Board = useBoardConfigContext()
