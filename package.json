@@ -1,6 +1,6 @@
 {
-  "name": "qwixx-react",
-  "version": "2.2.0",
+  "name": "qwixx",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
   "homepage": "https://games.hales.app/qwixx/",
